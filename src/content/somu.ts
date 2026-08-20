@@ -51,8 +51,8 @@ export const AUDIO = {
 };
 
 export const SONG_META = {
-  title: "[ADD SONG TITLE HERE]",
-  subtitle: "Sung by Somu · recorded [ADD DATE HERE]",
+  title: "Unstoppable by SOMU",
+  subtitle: "Sung by Somu",
   note: "The most streamed song in this house.",
 };
 
