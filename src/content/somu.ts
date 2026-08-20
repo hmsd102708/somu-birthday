@@ -154,7 +154,7 @@ export const ERAS: {
 
 /* ── FAKE CELEBRITY PROFILE ───────────────────────────────────── */
 export const CELEB_STATS = [
-  { label: "Followers", value: "128.7M" },
+  { label: "Followers", value: "999M" },
   { label: "Likes", value: "2.4B" },
   { label: "Trending", value: "#1" },
   { label: "Status", value: "Global Icon" },
@@ -169,9 +169,9 @@ export const CELEB_LINES = [
 export const CELEB_AWARDS: { label: string; pct: number }[] = [
   { label: "Most Powerful", pct: 100 },
   { label: "Most Beautiful", pct: 100 },
-  { label: "Most Bossy", pct: 99 },
+  { label: "Most Bossy", pct: 100 },
   { label: "Most Loved", pct: 100 },
-  { label: "Most Dangerous Smile", pct: 97 },
+  { label: "Most Dangerous Smile", pct: 100 },
   { label: "Most Likely To Be Right", pct: 100 },
 ];
 
