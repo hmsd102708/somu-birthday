@@ -253,7 +253,7 @@ export const VAULT_QUESTIONS: VaultQuestion[] = [
 export type KnowQuestion = {
   q: string;
   options: string[];
-  correct: number;
+  correct: number | number[];
   right: string;
   wrong: string;
 };
@@ -274,32 +274,32 @@ export const KNOW_QUESTIONS: KnowQuestion[] = [
     wrong: "Bold of you. Brave, even.",
   },
   {
-    q: "What happens if you disagree with her?",
-    options: ["A calm discussion", "You lose", "You lose, but politely"],
-    correct: 1,
-    right: "Efficient. No notes.",
-    wrong: "Optimistic of you.",
-  },
-  {
-    q: "Which Taylor era is Somu, spiritually?",
-    options: ["All of them, simultaneously", "Just one", "None"],
-    correct: 0,
-    right: "Chaotic. Accurate.",
-    wrong: "You clearly haven't met her.",
-  },
-  {
-    q: "Her ideal apology from me is…",
-    options: ["Words", "Food", "Food, then words"],
+    q: "Which is Somu's favourite chocolate?",
+    options: ["KitKat", "Dairy Milk", "Both obviously 👑"],
     correct: 2,
-    right: "You've studied.",
-    wrong: "Words alone have never worked. Ever.",
+    right: "Correct. Why choose when you can have both?",
+    wrong: "Wrong. It's obviously both!",
   },
   {
-    q: "How long can she stay angry?",
-    options: ["[ADD ANSWER HERE]", "Until food arrives", "Forever, she's built different"],
-    correct: 1,
-    right: "Scientifically proven.",
-    wrong: "Close, but the kitchen always wins.",
+    q: "What is her favourite hoodie?",
+    options: ["Her own hoodie", "Any cozy hoodie", "My hoodie obviously 👑"],
+    correct: 2,
+    right: "What's yours is hers.",
+    wrong: "Nope, your closet is her closet.",
+  },
+  {
+    q: "What is Somu's favourite food?",
+    options: ["Bhindi", "My cooked food", "My cooked bhindi 👑"],
+    correct: 2,
+    right: "Chef status achieved!",
+    wrong: "Close, but it has to be cooked by you!",
+  },
+  {
+    q: "Is Somu the prettiest?",
+    options: ["Obviously 👑", "100% yes 👑", "All 3 👑"],
+    correct: [0, 1, 2],
+    right: "There are no wrong answers here. She's the prettiest!",
+    wrong: "Impossible to get this wrong!",
   },
 ];
 
