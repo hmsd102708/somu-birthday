@@ -3,8 +3,8 @@
  *  SOMU — ALL EDITABLE CONTENT LIVES HERE
  * ─────────────────────────────────────────────────────────────
  *  Change text, quiz questions, love notes and file paths below.
- *  Photos  ->  public/photos/   (see PHOTOS list)
- *  Audio   ->  public/audio/    (see AUDIO list)
+ *  Photos   ->  public/photos/    (see PHOTOS list)
+ *  Audio    ->  public/audio/     (see AUDIO list)
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -32,9 +32,9 @@ export type PhotoId =
 export const PHOTOS: Record<PhotoId, { src: string | null; alt: string }> = {
   PHOTO_PLACEHOLDER_01: { src: "/photos/01.JPG", alt: "Somu smiling" }, // hero / world
   PHOTO_PLACEHOLDER_02: { src: "/photos/02.JPG", alt: "Somu, cute era" },
-  PHOTO_PLACEHOLDER_03: { src: "/photos/03.JPG", alt: "Somu, bossy era" },
-  PHOTO_PLACEHOLDER_04: { src: "/photos/04.jpg", alt: "Somu, lover era" },
-  PHOTO_PLACEHOLDER_06: { src: "/photos/06.jpg", alt: "Somu, artist era" },
+  PHOTO_PLACEHOLDER_03: { src: "/photos/03.JPG", alt: "Somu, confident era" },
+  PHOTO_PLACEHOLDER_04: { src: "/photos/04.jpg", alt: "Somu, funky era" },
+  PHOTO_PLACEHOLDER_06: { src: "/photos/06.jpg", alt: "Somu, lively era" },
   PHOTO_PLACEHOLDER_07: { src: "/photos/07.jpg", alt: "Somu singing" },
   PHOTO_PLACEHOLDER_08: { src: "/photos/08.jpg", alt: "Somu, favourite photo" },
   PHOTO_PLACEHOLDER_09: { src: "/photos/09.jpg", alt: "Us together" },
@@ -94,7 +94,7 @@ export const WORLD_CARDS: {
     sub: "For the 0.0001% of moments when she isn't bossing me around.",
     tone: "pink",
   },
-  { id: "eras", emoji: "🎞", title: "Somu's Eras", sub: "Five moods. One woman. No warning.", tone: "cream", span: true },
+  { id: "eras", emoji: "🎞", title: "Somu's Eras", sub: "Four moods. One woman. No warning.", tone: "cream", span: true },
   { id: "know", emoji: "🧠", title: "How Well Do You Know Somu?", sub: "Let's see if you actually know your girlfriend.", tone: "cream" },
   { id: "vault", emoji: "🔐", title: "Somu's Secret Vault", sub: "Only a true Swiftie can unlock this.", tone: "ink" },
   { id: "analytics", emoji: "📊", title: "Somu Analytics", sub: "Officially unofficial statistics.", tone: "wine" },
@@ -118,35 +118,35 @@ export const ERAS: {
     id: "cute",
     emoji: "🎀",
     name: "Cute Somu",
-    caption: "The cute one. Allegedly innocent.",
-    body: "Big eyes, tiny voice, absolutely zero accountability. Somehow always forgiven within four seconds.",
+    caption: "Smile and everything melts.",
+    body: "Smile and now you cannot say anything, everything inside of you will melt and you will be doing everything she asks.",
     photo: "PHOTO_PLACEHOLDER_02",
     theme: "cute",
   },
   {
-    id: "bossy",
+    id: "confident",
     emoji: "👑",
-    name: "Bossy Somu",
-    caption: "The boss has entered the room.",
-    body: "Decisions are announced, not discussed. I've learned to simply agree and be happy about it.",
+    name: "Confident Somu",
+    caption: "Inspiration in action.",
+    body: "Confidence that inspires me so much that it makes me push myself harder.",
     photo: "PHOTO_PLACEHOLDER_03",
     theme: "bossy",
   },
   {
-    id: "lover",
-    emoji: "💗",
-    name: "Lover Somu",
-    caption: "Soft hours. Rare. Documented.",
-    body: "The version of her that makes an ordinary Tuesday feel like the best day of the year.",
+    id: "funky",
+    emoji: "✨",
+    name: "Funky Somu",
+    caption: "Killing the style with the looks.",
+    body: "Always increasing the value of what you wear, always killing the style with the looks.",
     photo: "PHOTO_PLACEHOLDER_04",
     theme: "lover",
   },
   {
-    id: "artist",
-    emoji: "🎤",
-    name: "Artist Somu",
-    caption: "Generational talent. Extremely underrated. By everyone except me.",
-    body: "One voice note from her outperforms most of the music industry. I don't make the rules.",
+    id: "lively",
+    emoji: "🌸",
+    name: "Lively Somu",
+    caption: "Peaceful and happy vibes.",
+    body: "That chulbuli part of yours that gives peaceful and happy vibes.",
     photo: "PHOTO_PLACEHOLDER_06",
     theme: "artist",
   },
@@ -155,7 +155,7 @@ export const ERAS: {
 /* ── FAKE CELEBRITY PROFILE ───────────────────────────────────── */
 export const CELEB_STATS = [
   { label: "Followers", value: "999M" },
-  { label: "Likes", value: "2.4B" },
+  { label: "Likes", value: "100B" },
   { label: "Trending", value: "#1" },
   { label: "Status", value: "Global Icon" },
 ];
