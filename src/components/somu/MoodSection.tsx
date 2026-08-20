@@ -60,17 +60,13 @@ export function ArtistSomu({ onBack }: { onBack: () => void }) {
       <div className="mt-10 space-y-6">
         <Reveal>
           <p className="editorial text-3xl text-cream">
-            "Generational talent. Extremely underrated. By everyone except me."
+            "Generational talent. Extremely underrated."
           </p>
         </Reveal>
         <Reveal delay={80}>
           <p className="text-sm leading-relaxed text-cream/70">
-            Sold-out shows in the kitchen. Encore performances in the car. Critics (me) call it "the best voice I've
-            ever been personally serenaded by." {CELEB_LINES[2]}
+            Sold-out shows in the festivals. Phenomenal performances ever in history. Critics (me) call it "the best voice I've ever been personally serenaded by." {CELEB_LINES[2]}
           </p>
-        </Reveal>
-        <Reveal delay={140}>
-          <p className="hand text-xl text-chrome/70">[ADD MEMORY HERE] — the first time I heard her sing.</p>
         </Reveal>
       </div>
     </SectionShell>
