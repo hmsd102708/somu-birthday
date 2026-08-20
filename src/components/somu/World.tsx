@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { HER, WORLD_CARDS, type SectionId } from "@/content/somu";
 import { play } from "@/lib/sound";
 import { cn } from "@/lib/utils";
@@ -12,7 +11,6 @@ const toneClass: Record<string, string> = {
 };
 
 export function World({ onOpen }: { onOpen: (id: SectionId) => void }) {
-  const [secret, setSecret] = useState(false);
 
   return (
     <section className="world-canvas grain-light relative min-h-dvh px-5 pt-8 pb-24 sm:px-8 sm:pt-11">
@@ -35,22 +33,8 @@ export function World({ onOpen }: { onOpen: (id: SectionId) => void }) {
           <div className="relative mx-auto max-w-[17rem] sm:max-w-xs">
             <div className="absolute -top-3 -left-8 hidden h-24 w-24 rounded-full border border-rose/25 sm:block" />
             <span className="anim-float absolute -top-3 -right-5 z-10 text-2xl text-gold" style={{ ["--float-rotate" as string]: "-8deg" }}>✦</span>
-            <Photo id="PHOTO_PLACEHOLDER_01" shape="polaroid" caption="the birthday girl · issue 24" tilt={-2.5} />
-            <button
-              aria-label="A tiny hidden star"
-              onClick={() => {
-                play("sparkle");
-                setSecret((s) => !s);
-              }}
-              className="absolute -right-3 -bottom-2 text-gold/70 transition-transform hover:scale-125"
-            >
-              ✦
-            </button>
-            {secret && (
-              <p className="hand anim-fade-up mt-3 text-center text-lg text-wine">
-                You found something that wasn't supposed to be this easy to find. ❤️
-              </p>
-            )}
+            <Photo id="PHOTO_PLACEHOLDER_01" shape="polaroid" caption="the birthday girl" tilt={-2.5} />
+            
           </div>
         </Reveal>
 
@@ -83,10 +67,6 @@ export function World({ onOpen }: { onOpen: (id: SectionId) => void }) {
               </button>
             </Reveal>
           ))}
-        </div>
-
-        <div className="mx-auto mt-14 max-w-sm border-y border-wine/10 py-4 text-center">
-          <p className="hand text-lg text-muted-foreground">psst — there are a few hidden things in here. good luck. ✦</p>
         </div>
       </div>
     </section>
