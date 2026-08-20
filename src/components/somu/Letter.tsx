@@ -23,7 +23,7 @@ export function Letter({ onBack }: { onBack: () => void }) {
 
         <Reveal delay={120} className="mt-10">
           <div className="mx-auto max-w-[15rem]">
-            <Photo id="PHOTO_PLACEHOLDER_09" shape="frame" caption="us" tilt={1.5} />
+            <Photo id="PHOTO_PLACEHOLDER_09" shape="frame" caption="with love ❤️" tilt={1.5} />
           </div>
         </Reveal>
       </div>
