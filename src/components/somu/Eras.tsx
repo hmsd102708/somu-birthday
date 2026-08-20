@@ -58,7 +58,7 @@ export function Eras({ onBack }: { onBack: () => void }) {
     <SectionShell onBack={onBack} label="Eras">
       <header className="mb-10">
         <h1 className="editorial text-5xl text-wine sm:text-7xl">Somu's Eras</h1>
-        <p className="hand mt-2 text-xl text-rose">five moods, one woman, no warning</p>
+        <p className="hand mt-2 text-xl text-rose">four moods, one woman, no warning</p>
       </header>
 
       <div className="grid gap-4 sm:grid-cols-2">
