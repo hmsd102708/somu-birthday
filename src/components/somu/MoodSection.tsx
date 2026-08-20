@@ -43,7 +43,7 @@ export function ArtistSomu({ onBack }: { onBack: () => void }) {
   return (
     <SectionShell onBack={onBack} label="Generational Artist" tone="dark">
       <header className="mb-8">
-        <p className="overline text-[0.6rem] text-chrome">Cover story · Issue No. {HER.age}</p>
+        <p className="overline text-[0.6rem] text-chrome">Cover story</p>
         <h1 className="editorial mt-3 text-5xl text-cream sm:text-7xl">Generational Artist</h1>
         <p className="hand mt-2 text-xl text-gold/80">Taylor Swift has competition.</p>
       </header>
