@@ -177,15 +177,13 @@ export const CELEB_AWARDS: { label: string; pct: number }[] = [
 
 /* ── ANALYTICS ────────────────────────────────────────────────── */
 export const ANALYTICS: { label: string; value: string; numeric?: number; suffix?: string }[] = [
-  { label: "Cuteness", value: "99.99%", numeric: 99.99, suffix: "%" },
-  { label: "Bossiness", value: "9999%", numeric: 9999, suffix: "%" },
-  { label: "Taylor Swift Knowledge", value: "∞" },
+  { label: "Cuteness", value: "∞" },
+  { label: "Bossiness", value: "∞" },
   { label: "Patience", value: "Depends on me" },
   { label: "Anger Level", value: "CLASSIFIED" },
   { label: "Smile Power", value: "Dangerous" },
   { label: "Boyfriend Control", value: "100%", numeric: 100, suffix: "%" },
   { label: "Times She Was Wrong", value: "0", numeric: 0 },
-  { label: "Songs Ruined By Her Version", value: "All of them" },
 ];
 
 /* ── VAULT (Taylor-inspired riddles) ──────────────────────────── */
