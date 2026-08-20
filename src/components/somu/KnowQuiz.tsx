@@ -11,12 +11,21 @@ export function KnowQuiz({ onBack }: { onBack: () => void }) {
   const [finished, setFinished] = useState(false);
 
   const q = KNOW_QUESTIONS[i];
-  const correct = picked !== null && q && picked === q.correct;
+
+  const isCorrectOption = (idx: number) => {
+    if (!q) return false;
+    return Array.isArray(q.correct)
+      ? q.correct.includes(idx)
+      : q.correct === idx;
+  };
+
+  const correct = picked !== null && isCorrectOption(picked);
 
   const choose = (idx: number) => {
     if (picked !== null || !q) return;
     setPicked(idx);
-    if (idx === q.correct) {
+
+    if (isCorrectOption(idx)) {
       setScore((s) => s + 1);
       play("correct");
     } else {
@@ -74,14 +83,16 @@ export function KnowQuiz({ onBack }: { onBack: () => void }) {
             <p className="editorial text-2xl text-burgundy sm:text-3xl">{q.q}</p>
             <div className="mt-6 space-y-3">
               {q.options.map((o, idx) => {
+                const isOptionCorrect = isCorrectOption(idx);
                 const state =
                   picked === null
                     ? "idle"
-                    : idx === q.correct
+                    : isOptionCorrect
                       ? "right"
                       : idx === picked
                         ? "wrong"
                         : "dim";
+
                 return (
                   <button
                     key={o}
