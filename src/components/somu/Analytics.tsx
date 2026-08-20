@@ -1,4 +1,4 @@
-import { ANALYTICS, HER } from "@/content/somu";
+import { ANALYTICS } from "@/content/somu";
 import { Counter, Reveal, SectionShell } from "./primitives";
 
 export function Analytics({ onBack }: { onBack: () => void }) {
@@ -7,7 +7,7 @@ export function Analytics({ onBack }: { onBack: () => void }) {
       <header className="mb-10">
         <p className="overline text-[0.6rem] text-muted-foreground">Officially unofficial statistics</p>
         <h1 className="editorial mt-3 text-5xl text-wine sm:text-7xl">Somu Analytics</h1>
-        <p className="hand mt-2 text-xl text-rose">data doesn't lie. mostly.</p>
+        <p className="hand mt-2 text-xl text-rose">data doesn't lie</p>
       </header>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
@@ -34,12 +34,6 @@ export function Analytics({ onBack }: { onBack: () => void }) {
           </Reveal>
         ))}
       </div>
-
-      <Reveal delay={120}>
-        <p className="hand mt-12 text-center text-xl text-muted-foreground">
-          methodology: {HER.age} years of observation, zero objectivity.
-        </p>
-      </Reveal>
     </SectionShell>
   );
 }
