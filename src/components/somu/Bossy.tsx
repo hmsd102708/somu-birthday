@@ -5,13 +5,23 @@ import {
   CELEB_STATS,
   HER,
 } from "@/content/somu";
-import { Counter, PhotoGallery, Reveal, SectionShell, Stars } from "./primitives";
+import {
+  Counter,
+  Photo,
+  Reveal,
+  SectionShell,
+  Stars,
+} from "./primitives";
 
 export function Bossy({ onBack }: { onBack: () => void }) {
   const [stage, setStage] = useState<"intro" | "profile">("intro");
 
   useEffect(() => {
-    const t = window.setTimeout(() => setStage("profile"), 4200);
+    const t = window.setTimeout(
+      () => setStage("profile"),
+      4200,
+    );
+
     return () => window.clearTimeout(t);
   }, []);
 
@@ -58,17 +68,15 @@ export function Bossy({ onBack }: { onBack: () => void }) {
         <Stars count={10} className="text-chrome/30" />
 
         <Reveal>
-          <div className="border-b border-chrome/15 pb-10">
-            <PhotoGallery
-              photos={[
-                "PHOTO_PLACEHOLDER_03",
-                "PHOTO_PLACEHOLDER_16",
-              ]}
+          <div className="flex flex-col items-center gap-6 border-b border-chrome/15 pb-10 text-center sm:flex-row sm:text-left">
+            <Photo
+              id="bossy"
               shape="circle"
-              captions={["Bossy Somu", "Still Bossy Somu"]}
+              className="w-36 shrink-0"
+              ratio="1 / 1"
             />
 
-            <div className="mt-6 text-center">
+            <div>
               <h1 className="editorial text-5xl text-cream sm:text-6xl">
                 {HER.name}
               </h1>
@@ -77,7 +85,7 @@ export function Bossy({ onBack }: { onBack: () => void }) {
                 {HER.handle} · verified by me
               </p>
 
-              <p className="mx-auto mt-4 max-w-md text-sm leading-relaxed text-cream/70">
+              <p className="mt-4 max-w-md text-sm leading-relaxed text-cream/70">
                 {CELEB_LINES[0]}
               </p>
             </div>
@@ -104,6 +112,10 @@ export function Bossy({ onBack }: { onBack: () => void }) {
           <blockquote className="mt-12 border-l-2 border-gold/50 pl-5">
             <p className="editorial text-2xl text-cream sm:text-3xl">
               {CELEB_LINES[1]}
+            </p>
+
+            <p className="mt-4 text-sm leading-relaxed text-cream/60">
+              {CELEB_LINES[2]}
             </p>
           </blockquote>
         </Reveal>
