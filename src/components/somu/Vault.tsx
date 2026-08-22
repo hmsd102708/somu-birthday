@@ -52,7 +52,10 @@ export function Vault({
       setValue("");
       setShowHint(false);
 
-      if (unlocked.length + 1 === VAULT_QUESTIONS.length) {
+      if (
+        unlocked.length + 1 ===
+        VAULT_QUESTIONS.length
+      ) {
         onAllUnlocked?.();
       }
     } else {
@@ -63,7 +66,11 @@ export function Vault({
 
   if (locked) {
     return (
-      <SectionShell onBack={onBack} label="The Vault" tone="dark">
+      <SectionShell
+        onBack={onBack}
+        label="The Vault"
+        tone="dark"
+      >
         <div className="relative flex min-h-[60vh] flex-col items-center justify-center text-center">
           <Stars count={18} className="text-gold/40" />
 
@@ -92,7 +99,11 @@ export function Vault({
   }
 
   return (
-    <SectionShell onBack={onBack} label="The Vault" tone="dark">
+    <SectionShell
+      onBack={onBack}
+      label="The Vault"
+      tone="dark"
+    >
       <div className="relative">
         <Stars count={12} className="text-gold/30" />
 
@@ -212,6 +223,7 @@ export function Vault({
                           VAULT_QUESTIONS.length - 1,
                         ),
                       );
+
                       setValue("");
                       setStatus("idle");
                       setShowHint(false);
@@ -240,7 +252,9 @@ export function Vault({
                   (_, i) => !unlocked.includes(i),
                 );
 
-                setIndex(next === -1 ? index : next);
+                setIndex(
+                  next === -1 ? index : next,
+                );
               }}
             >
               Next riddle →
