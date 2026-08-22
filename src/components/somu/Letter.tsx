@@ -39,7 +39,7 @@ export function Letter({ onBack }: { onBack: () => void }) {
         <Reveal delay={120} className="mt-10">
           <div className="mx-auto max-w-[15rem]">
             <Photo
-              id="PHOTO_LETTER"
+              id="letter"
               shape="frame"
               caption="with love ❤️"
               tilt={1.5}
