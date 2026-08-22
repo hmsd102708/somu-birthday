@@ -1,8 +1,12 @@
 import { useState } from "react";
-import { FINAL_LINES, FINAL_SURPRISE, HER } from "@/content/somu";
+import {
+  FINAL_LINES,
+  FINAL_SURPRISE,
+  HER,
+} from "@/content/somu";
 import { play } from "@/lib/sound";
 import {
-  PhotoGallery,
+  Photo,
   Reveal,
   SectionShell,
   SoftButton,
@@ -30,11 +34,14 @@ export function Final({ onBack }: { onBack: () => void }) {
         </Reveal>
 
         <Reveal delay={100}>
-          <PhotoGallery
-            photos={FINAL_SURPRISE.photos}
-            shape="polaroid"
-            captions={["my favourite person", "another favourite ❤️"]}
-          />
+          <div className="mx-auto mt-6 max-w-[16rem]">
+            <Photo
+              id="final"
+              shape="polaroid"
+              tilt={-1.5}
+              caption="my favourite person"
+            />
+          </div>
         </Reveal>
 
         <div className="mt-14 space-y-2">
