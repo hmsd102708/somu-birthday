@@ -3,7 +3,7 @@ import { ERAS } from "@/content/somu";
 import { play } from "@/lib/sound";
 import { cn } from "@/lib/utils";
 import {
-  PhotoGallery,
+  Photo,
   Reveal,
   SectionShell,
   SoftButton,
@@ -13,12 +13,14 @@ import {
 const themeClass: Record<string, string> = {
   cute: "bg-blush text-burgundy",
   bossy: "bg-ink text-cream",
-  lover: "bg-[color-mix(in_oklab,var(--color-rose)_35%,white)] text-burgundy",
+  lover:
+    "bg-[color-mix(in_oklab,var(--color-rose)_35%,white)] text-burgundy",
   artist: "bg-wine text-cream",
 };
 
 export function Eras({ onBack }: { onBack: () => void }) {
   const [open, setOpen] = useState<string | null>(null);
+
   const era = ERAS.find((e) => e.id === open);
 
   if (era) {
@@ -58,19 +60,19 @@ export function Eras({ onBack }: { onBack: () => void }) {
           </p>
 
           <div
-            className="anim-fade-up mt-10"
+            className="anim-fade-up mt-10 grid gap-6 sm:grid-cols-[1fr_1.1fr]"
             style={{ animationDelay: "320ms" }}
           >
-            <PhotoGallery
-              photos={era.photos}
+            <Photo
+              id={era.photo}
               shape={era.theme === "artist" ? "cover" : "polaroid"}
-              captions={era.photos.map(() => era.name)}
+              tilt={-1.5}
             />
-          </div>
 
-          <p className="mt-10 text-[0.95rem] leading-relaxed opacity-80">
-            {era.body}
-          </p>
+            <p className="self-center text-[0.95rem] leading-relaxed opacity-80">
+              {era.body}
+            </p>
+          </div>
 
           <div className="mt-14 flex flex-wrap gap-3">
             <SoftButton
