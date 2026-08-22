@@ -2,9 +2,34 @@
  * ─────────────────────────────────────────────────────────────
  *  SOMU — ALL EDITABLE CONTENT LIVES HERE
  * ─────────────────────────────────────────────────────────────
- *  Change text, quiz questions, love notes and file paths below.
- *  Photos   ->  public/photos/    (see PHOTOS list)
- *  Audio    ->  public/audio/     (see AUDIO list)
+ *
+ *  PHOTOS:
+ *  Put all photos in:
+ *      public/photos/
+ *
+ *  The filename determines where the photo appears.
+ *
+ *      hero.jpg          → Somu's World hero
+ *      cute-1.jpg        → Cute Somu photo 1
+ *      cute-2.jpg        → Cute Somu photo 2
+ *      cute-3.jpg        → Cute Somu photo 3
+ *      bossy.jpg         → Bossy Somu
+ *      artist.jpg        → Generational Artist
+ *      era-cute.jpg      → Cute Era
+ *      era-confident.jpg → Confident Era
+ *      era-funky.jpg     → Funky Era
+ *      era-lively.jpg    → Lively Era
+ *      music.jpg         → Her Music
+ *      final.jpg         → Final Surprise
+ *
+ *  To change a photo:
+ *  Simply replace the corresponding file with another image
+ *  using EXACTLY the same filename.
+ *
+ *  AUDIO:
+ *  Put audio files in:
+ *      public/audio/
+ *
  * ─────────────────────────────────────────────────────────────
  */
 
@@ -17,47 +42,79 @@ export const HER = {
 /* ── PHOTOS ─────────────────────────────────────────────────── */
 
 export type PhotoId =
-  | "PHOTO_PLACEHOLDER_01"
-  | "PHOTO_PLACEHOLDER_02"
-  | "PHOTO_PLACEHOLDER_03"
-  | "PHOTO_PLACEHOLDER_04"
-  | "PHOTO_PLACEHOLDER_06"
-  | "PHOTO_PLACEHOLDER_07"
-  | "PHOTO_PLACEHOLDER_08"
-  | "PHOTO_PLACEHOLDER_09"
-  | "PHOTO_PLACEHOLDER_10"
-  | "PHOTO_PLACEHOLDER_11"
-  | "PHOTO_PLACEHOLDER_12"
-  | "PHOTO_PLACEHOLDER_13"
-  | "PHOTO_PLACEHOLDER_14"
-  | "PHOTO_PLACEHOLDER_15"
-  | "PHOTO_PLACEHOLDER_16"
-  | "PHOTO_PLACEHOLDER_17"
-  | "PHOTO_PLACEHOLDER_18";
+  | "hero"
+  | "cute-1"
+  | "cute-2"
+  | "cute-3"
+  | "bossy"
+  | "artist"
+  | "era-cute"
+  | "era-confident"
+  | "era-funky"
+  | "era-lively"
+  | "music"
+  | "final";
 
-export const PHOTOS: Record<PhotoId, { src: string | null; alt: string }> = {
-  PHOTO_PLACEHOLDER_01: { src: "/photos/01.JPG", alt: "Somu smiling" },
+export const PHOTOS: Record<PhotoId, { src: string; alt: string }> = {
+  hero: {
+    src: "/photos/hero.jpg",
+    alt: "Somu, the birthday girl",
+  },
 
-  PHOTO_PLACEHOLDER_02: { src: "/photos/02.JPG", alt: "Somu, cute era" },
-  PHOTO_PLACEHOLDER_03: { src: "/photos/03.JPG", alt: "Somu, confident era" },
-  PHOTO_PLACEHOLDER_04: { src: "/photos/04.jpg", alt: "Somu, funky era" },
-  PHOTO_PLACEHOLDER_06: { src: "/photos/06.jpg", alt: "Somu, lively era" },
-  PHOTO_PLACEHOLDER_07: { src: "/photos/07.jpg", alt: "Somu singing" },
-  PHOTO_PLACEHOLDER_08: { src: "/photos/08.jpg", alt: "Somu, favourite photo" },
-  PHOTO_PLACEHOLDER_09: { src: "/photos/09.jpg", alt: "Us together" },
+  "cute-1": {
+    src: "/photos/cute-1.jpg",
+    alt: "Somu, cute photo one",
+  },
 
-  /* ── ADDITIONAL PHOTOS ──
-   * Put these files inside public/photos/
-   */
-  PHOTO_PLACEHOLDER_10: { src: "/photos/10.jpg", alt: "Somu, cute photo 2" },
-  PHOTO_PLACEHOLDER_11: { src: "/photos/11.jpg", alt: "Somu, cute photo 3" },
-  PHOTO_PLACEHOLDER_12: { src: "/photos/12.jpg", alt: "Somu, cute photo 4" },
-  PHOTO_PLACEHOLDER_13: { src: "/photos/13.jpg", alt: "Somu, confident photo 2" },
-  PHOTO_PLACEHOLDER_14: { src: "/photos/14.jpg", alt: "Somu, funky photo 2" },
-  PHOTO_PLACEHOLDER_15: { src: "/photos/15.jpg", alt: "Somu, lively photo 2" },
-  PHOTO_PLACEHOLDER_16: { src: "/photos/16.jpg", alt: "Somu, Bossy Somu photo 2" },
-  PHOTO_PLACEHOLDER_17: { src: "/photos/17.jpg", alt: "Somu, final surprise photo 2" },
-  PHOTO_PLACEHOLDER_18: { src: "/photos/18.jpg", alt: "Somu, extra photo" },
+  "cute-2": {
+    src: "/photos/cute-2.jpg",
+    alt: "Somu, cute photo two",
+  },
+
+  "cute-3": {
+    src: "/photos/cute-3.jpg",
+    alt: "Somu, cute photo three",
+  },
+
+  bossy: {
+    src: "/photos/bossy.jpg",
+    alt: "Somu, bossy era",
+  },
+
+  artist: {
+    src: "/photos/artist.jpg",
+    alt: "Somu, generational artist",
+  },
+
+  "era-cute": {
+    src: "/photos/era-cute.jpg",
+    alt: "Somu, cute era",
+  },
+
+  "era-confident": {
+    src: "/photos/era-confident.jpg",
+    alt: "Somu, confident era",
+  },
+
+  "era-funky": {
+    src: "/photos/era-funky.jpg",
+    alt: "Somu, funky era",
+  },
+
+  "era-lively": {
+    src: "/photos/era-lively.jpg",
+    alt: "Somu, lively era",
+  },
+
+  music: {
+    src: "/photos/music.jpg",
+    alt: "Somu singing",
+  },
+
+  final: {
+    src: "/photos/final.jpg",
+    alt: "Somu, my favourite person",
+  },
 };
 
 /* ── AUDIO ──────────────────────────────────────────────────── */
@@ -180,7 +237,7 @@ export const WORLD_CARDS: {
   },
 ];
 
-/* ── ERAS ─────────────────────────────────────────────────────── */
+/* ── ERAS ───────────────────────────────────────────────────── */
 
 export const ERAS: {
   id: string;
@@ -189,7 +246,6 @@ export const ERAS: {
   caption: string;
   body: string;
   photo: PhotoId;
-  photos: PhotoId[];
   theme: "cute" | "bossy" | "lover" | "artist";
 }[] = [
   {
@@ -198,13 +254,7 @@ export const ERAS: {
     name: "Cute Somu",
     caption: "Smile and everything melts.",
     body: "Smile and now you cannot say anything, everything inside of you will melt and you will be doing everything she asks.",
-    photo: "PHOTO_PLACEHOLDER_02",
-    photos: [
-      "PHOTO_PLACEHOLDER_02",
-      "PHOTO_PLACEHOLDER_10",
-      "PHOTO_PLACEHOLDER_11",
-      "PHOTO_PLACEHOLDER_12",
-    ],
+    photo: "era-cute",
     theme: "cute",
   },
   {
@@ -213,11 +263,7 @@ export const ERAS: {
     name: "Confident Somu",
     caption: "Inspiration in action.",
     body: "Confidence that inspires me so much that it makes me push myself harder.",
-    photo: "PHOTO_PLACEHOLDER_03",
-    photos: [
-      "PHOTO_PLACEHOLDER_03",
-      "PHOTO_PLACEHOLDER_13",
-    ],
+    photo: "era-confident",
     theme: "bossy",
   },
   {
@@ -226,11 +272,7 @@ export const ERAS: {
     name: "Funky Somu",
     caption: "Killing the style with the looks.",
     body: "Always increasing the value of what you wear, always killing the style with the looks.",
-    photo: "PHOTO_PLACEHOLDER_04",
-    photos: [
-      "PHOTO_PLACEHOLDER_04",
-      "PHOTO_PLACEHOLDER_14",
-    ],
+    photo: "era-funky",
     theme: "lover",
   },
   {
@@ -239,16 +281,12 @@ export const ERAS: {
     name: "Lively Somu",
     caption: "Peaceful and happy vibes.",
     body: "That chulbuli part of yours that gives peaceful and happy vibes.",
-    photo: "PHOTO_PLACEHOLDER_06",
-    photos: [
-      "PHOTO_PLACEHOLDER_06",
-      "PHOTO_PLACEHOLDER_15",
-    ],
+    photo: "era-lively",
     theme: "artist",
   },
 ];
 
-/* ── FAKE CELEBRITY PROFILE ───────────────────────────────────── */
+/* ── FAKE CELEBRITY PROFILE ─────────────────────────────────── */
 
 export const CELEB_STATS = [
   { label: "Followers", value: "999M" },
@@ -260,7 +298,7 @@ export const CELEB_STATS = [
 export const CELEB_LINES = [
   "Most influential bossy girl of the generation.",
   "Queen of absolutely everything.",
-  "",
+  "7 billion people exist. Somehow she still chose to boss me around.",
 ];
 
 export const CELEB_AWARDS: { label: string; pct: number }[] = [
@@ -272,7 +310,7 @@ export const CELEB_AWARDS: { label: string; pct: number }[] = [
   { label: "Most Likely To Be Right", pct: 100 },
 ];
 
-/* ── ANALYTICS ────────────────────────────────────────────────── */
+/* ── ANALYTICS ──────────────────────────────────────────────── */
 
 export const ANALYTICS: {
   label: string;
@@ -289,7 +327,7 @@ export const ANALYTICS: {
   { label: "Times She Was Wrong", value: "0", numeric: 0 },
 ];
 
-/* ── VAULT ────────────────────────────────────────────────────── */
+/* ── VAULT ──────────────────────────────────────────────────── */
 
 export type VaultQuestion = {
   prompt: string;
@@ -301,7 +339,8 @@ export type VaultQuestion = {
 
 export const VAULT_QUESTIONS: VaultQuestion[] = [
   {
-    prompt: "And I don't know why, but with you I'd dance in a storm in my ______.",
+    prompt:
+      "And I don't know why, but with you I'd dance in a storm in my ______.",
     hint: "Fearless (Taylor's Version)",
     answers: ["best dress", "bestdress"],
     reward: "💋 100 Virtual & Real Kissies",
@@ -312,25 +351,28 @@ export const VAULT_QUESTIONS: VaultQuestion[] = [
     hint: "Paper Rings (Lover)",
     answers: ["paper"],
     reward: "🤗 The Big Warm Hug",
-    rewardNote: "The extra-cozy kind where I squeeze tight and don't let go first.",
+    rewardNote:
+      "The extra-cozy kind where I squeeze tight and don't let go first.",
   },
   {
     prompt: "Can I go where you go? Can we always be this ______?",
     hint: "Lover",
     answers: ["close"],
     reward: "👑 Full Princess Treatment Day",
-    rewardNote: "I handle all your errands, cook your favorite meal, and treat you like royalty.",
+    rewardNote:
+      "I handle all your errands, cook your favorite meal, and treat you like royalty.",
   },
   {
     prompt: "You are the best thing that's ever been ______.",
     hint: "Mine (Speak Now)",
     answers: ["mine"],
     reward: "💆 Deluxe Shoulder & Head Massage",
-    rewardNote: "A complete stress-relief session to melt away all your tiredness.",
+    rewardNote:
+      "A complete stress-relief session to melt away all your tiredness.",
   },
 ];
 
-/* ── HOW WELL DO YOU KNOW SOMU ────────────────────────────────── */
+/* ── HOW WELL DO YOU KNOW SOMU ─────────────────────────────── */
 
 export type KnowQuestion = {
   q: string;
@@ -385,25 +427,86 @@ export const KNOW_QUESTIONS: KnowQuestion[] = [
   },
 ];
 
-/* ── THINGS I LOVE ABOUT YOU ──────────────────────────────────── */
+/* ── THINGS I LOVE ABOUT YOU ───────────────────────────────── */
 
-export const LOVE_LIST: { emoji: string; title: string; message: string }[] = [
-  { emoji: "💗", title: "Your smile", message: "It ends arguments I was winning. Every single time." },
-  { emoji: "👑", title: "Your confidence", message: "You walk into rooms like they were reserved for you. Because they were." },
-  { emoji: "😂", title: "Your craziness", message: "Nobody else could make chaos feel this comforting." },
-  { emoji: "🎀", title: "Your cuteness", message: "Unfair. Weaponised. I've stopped resisting." },
-  { emoji: "🧠", title: "Your intelligence", message: "You explain things twice because I'm slow, and never once make me feel it." },
-  { emoji: "✨", title: "Your ambition", message: "You want a big life, and I have never once doubted you'll get it." },
-  { emoji: "❤️", title: "The way you care", message: "Quietly, constantly, in a hundred tiny ways you think nobody notices. I notice." },
-  { emoji: "🥹", title: "The way you make my days better", message: "Even the bad ones. Especially the bad ones." },
-  { emoji: "💞", title: "The way I resonate with you", message: "Same wavelength, same jokes, same silence. Rare thing." },
-  { emoji: "🤍", title: "The way you understand me", message: "You read me before I finish the sentence. Slightly terrifying. Mostly wonderful." },
-  { emoji: "🌱", title: "The way you believe in me", message: "You've backed me on days I couldn't back myself." },
-  { emoji: "☀️", title: "My mood lifter", message: "One text from you resets the whole day." },
-  { emoji: "❤️", title: "My love", message: "[ADD PERSONAL MESSAGE HERE]" },
+export const LOVE_LIST: {
+  emoji: string;
+  title: string;
+  message: string;
+}[] = [
+  {
+    emoji: "💗",
+    title: "Your smile",
+    message: "It ends arguments I was winning. Every single time.",
+  },
+  {
+    emoji: "👑",
+    title: "Your confidence",
+    message:
+      "You walk into rooms like they were reserved for you. Because they were.",
+  },
+  {
+    emoji: "😂",
+    title: "Your craziness",
+    message: "Nobody else could make chaos feel this comforting.",
+  },
+  {
+    emoji: "🎀",
+    title: "Your cuteness",
+    message: "Unfair. Weaponised. I've stopped resisting.",
+  },
+  {
+    emoji: "🧠",
+    title: "Your intelligence",
+    message:
+      "You explain things twice because I'm slow, and never once make me feel it.",
+  },
+  {
+    emoji: "✨",
+    title: "Your ambition",
+    message:
+      "You want a big life, and I have never once doubted you'll get it.",
+  },
+  {
+    emoji: "❤️",
+    title: "The way you care",
+    message:
+      "Quietly, constantly, in a hundred tiny ways you think nobody notices. I notice.",
+  },
+  {
+    emoji: "🥹",
+    title: "The way you make my days better",
+    message: "Even the bad ones. Especially the bad ones.",
+  },
+  {
+    emoji: "💞",
+    title: "The way I resonate with you",
+    message: "Same wavelength, same jokes, same silence. Rare thing.",
+  },
+  {
+    emoji: "🤍",
+    title: "The way you understand me",
+    message:
+      "You read me before I finish the sentence. Slightly terrifying. Mostly wonderful.",
+  },
+  {
+    emoji: "🌱",
+    title: "The way you believe in me",
+    message: "You've backed me on days I couldn't back myself.",
+  },
+  {
+    emoji: "☀️",
+    title: "My mood lifter",
+    message: "One text from you resets the whole day.",
+  },
+  {
+    emoji: "❤️",
+    title: "My love",
+    message: "[ADD PERSONAL MESSAGE HERE]",
+  },
 ];
 
-/* ── THE LETTER ───────────────────────────────────────────────── */
+/* ── THE LETTER ─────────────────────────────────────────────── */
 
 export const LETTER = {
   salutation: "Dear Somu,",
@@ -416,17 +519,12 @@ export const LETTER = {
   signature: "[ADD YOUR NAME HERE]",
 };
 
-/* ── FINAL SURPRISE ───────────────────────────────────────────── */
+/* ── FINAL SURPRISE ─────────────────────────────────────────── */
 
 export const FINAL_SURPRISE = {
   video: null as string | null,
   letter: "FINAL_LETTER_PLACEHOLDER — [ADD FINAL MESSAGE HERE]",
   voice: null as string | null,
-
-  photos: [
-    "PHOTO_PLACEHOLDER_08",
-    "PHOTO_PLACEHOLDER_17",
-  ] as PhotoId[],
 };
 
 export const FINAL_LINES = [
