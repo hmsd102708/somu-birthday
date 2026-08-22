@@ -7,27 +7,73 @@
  *  Put all photos in:
  *      public/photos/
  *
- *  The filename determines where the photo appears.
+ *  The filename determines exactly where the photo appears.
  *
- *      hero.jpg          → Somu's World hero
- *      cute-1.jpg        → Cute Somu photo 1
- *      cute-2.jpg        → Cute Somu photo 2
- *      cute-3.jpg        → Cute Somu photo 3
- *      bossy.jpg         → Bossy Somu
- *      artist.jpg        → Generational Artist
- *      era-cute.jpg      → Cute Era
- *      era-confident.jpg → Confident Era
- *      era-funky.jpg     → Funky Era
- *      era-lively.jpg    → Lively Era
- *      music.jpg         → Her Music
- *      final.jpg         → Final Surprise
+ *  PHOTO MAP
+ *  ────────────────────────────────────────────────────────────
  *
- *  To change a photo:
- *  Simply replace the corresponding file with another image
- *  using EXACTLY the same filename.
+ *      hero.jpg
+ *          → Somu's World hero photo
+ *
+ *      cute-1.jpg
+ *          → Cute Somu photo 1
+ *
+ *      cute-2.jpg
+ *          → Cute Somu photo 2
+ *
+ *      cute-3.jpg
+ *          → Cute Somu photo 3
+ *
+ *      bossy.jpg
+ *          → Bossy Somu
+ *
+ *      artist.jpg
+ *          → Generational Artist
+ *
+ *      era-cute.jpg
+ *          → Somu's Eras — Cute
+ *
+ *      era-confident.jpg
+ *          → Somu's Eras — Confident
+ *
+ *      era-funky.jpg
+ *          → Somu's Eras — Funky
+ *
+ *      era-lively.jpg
+ *          → Somu's Eras — Lively
+ *
+ *      music.jpg
+ *          → Her Music
+ *
+ *      letter.jpg
+ *          → A Letter For You
+ *
+ *      final.jpg
+ *          → One Last Surprise
+ *
+ *
+ *  TO CHANGE A PHOTO:
+ *
+ *  Simply replace the image in:
+ *
+ *      public/photos/
+ *
+ *  with another image using EXACTLY the same filename.
+ *
+ *  Example:
+ *
+ *      public/photos/bossy.jpg
+ *
+ *  Replace that file with another photo named:
+ *
+ *      bossy.jpg
+ *
+ *  The website will automatically use the new photo.
+ *
  *
  *  AUDIO:
  *  Put audio files in:
+ *
  *      public/audio/
  *
  * ─────────────────────────────────────────────────────────────
@@ -41,6 +87,19 @@ export const HER = {
 
 /* ── PHOTOS ─────────────────────────────────────────────────── */
 
+/**
+ * Every photo has its own ID.
+ *
+ * IMPORTANT:
+ * The ID corresponds directly to the filename.
+ *
+ * Example:
+ *
+ * "bossy" → /photos/bossy.jpg
+ *
+ * Therefore you never need to edit the React components just
+ * to change a photograph.
+ */
 export type PhotoId =
   | "hero"
   | "cute-1"
@@ -53,13 +112,18 @@ export type PhotoId =
   | "era-funky"
   | "era-lively"
   | "music"
+  | "letter"
   | "final";
 
 export const PHOTOS: Record<PhotoId, { src: string; alt: string }> = {
+  /* ── HERO ───────────────────────────────────────────────── */
+
   hero: {
     src: "/photos/hero.jpg",
     alt: "Somu, the birthday girl",
   },
+
+  /* ── CUTE SOMU ─────────────────────────────────────────── */
 
   "cute-1": {
     src: "/photos/cute-1.jpg",
@@ -76,15 +140,21 @@ export const PHOTOS: Record<PhotoId, { src: string; alt: string }> = {
     alt: "Somu, cute photo three",
   },
 
+  /* ── BOSSY SOMU ─────────────────────────────────────────── */
+
   bossy: {
     src: "/photos/bossy.jpg",
     alt: "Somu, bossy era",
   },
 
+  /* ── ARTIST ─────────────────────────────────────────────── */
+
   artist: {
     src: "/photos/artist.jpg",
     alt: "Somu, generational artist",
   },
+
+  /* ── ERAS ───────────────────────────────────────────────── */
 
   "era-cute": {
     src: "/photos/era-cute.jpg",
@@ -106,10 +176,21 @@ export const PHOTOS: Record<PhotoId, { src: string; alt: string }> = {
     alt: "Somu, lively era",
   },
 
+  /* ── MUSIC ──────────────────────────────────────────────── */
+
   music: {
     src: "/photos/music.jpg",
     alt: "Somu singing",
   },
+
+  /* ── LETTER ─────────────────────────────────────────────── */
+
+  letter: {
+    src: "/photos/letter.jpg",
+    alt: "A special photo of Somu",
+  },
+
+  /* ── FINAL SURPRISE ─────────────────────────────────────── */
 
   final: {
     src: "/photos/final.jpg",
@@ -121,8 +202,11 @@ export const PHOTOS: Record<PhotoId, { src: string; alt: string }> = {
 
 export const AUDIO = {
   herSong: "/audio/somu-song.mp3",
+
   ambientMain: "/audio/ambient-main.mp3",
+
   ambientBossy: "/audio/ambient-bossy.mp3",
+
   ambientMidnight: "/audio/ambient-midnight.mp3",
 };
 
@@ -132,7 +216,7 @@ export const SONG_META = {
   note: "The most streamed song in this house.",
 };
 
-/* ── WORLD CARDS ─────────────────────────────────────────────── */
+/* ── WORLD CARDS ───────────────────────────────────────────── */
 
 export type SectionId =
   | "bossy"
@@ -163,6 +247,7 @@ export const WORLD_CARDS: {
     tone: "ink",
     span: true,
   },
+
   {
     id: "artist",
     emoji: "🎤",
@@ -170,6 +255,7 @@ export const WORLD_CARDS: {
     sub: "Taylor Swift has competition.",
     tone: "wine",
   },
+
   {
     id: "cute",
     emoji: "💗",
@@ -177,6 +263,7 @@ export const WORLD_CARDS: {
     sub: "For the 0.0001% of moments when she isn't bossing me around.",
     tone: "pink",
   },
+
   {
     id: "eras",
     emoji: "🎞",
@@ -185,6 +272,7 @@ export const WORLD_CARDS: {
     tone: "cream",
     span: true,
   },
+
   {
     id: "know",
     emoji: "🧠",
@@ -192,6 +280,7 @@ export const WORLD_CARDS: {
     sub: "Let's see if you actually know your girlfriend.",
     tone: "cream",
   },
+
   {
     id: "vault",
     emoji: "🔐",
@@ -199,6 +288,7 @@ export const WORLD_CARDS: {
     sub: "Only a true Swiftie can unlock this.",
     tone: "ink",
   },
+
   {
     id: "analytics",
     emoji: "📊",
@@ -206,6 +296,7 @@ export const WORLD_CARDS: {
     sub: "Officially unofficial statistics.",
     tone: "wine",
   },
+
   {
     id: "love",
     emoji: "❤️",
@@ -213,6 +304,7 @@ export const WORLD_CARDS: {
     sub: "An ever-growing list.",
     tone: "pink",
   },
+
   {
     id: "music",
     emoji: "♫",
@@ -220,6 +312,7 @@ export const WORLD_CARDS: {
     sub: "The voice. Unreleased. Priceless.",
     tone: "cream",
   },
+
   {
     id: "letter",
     emoji: "💌",
@@ -228,6 +321,7 @@ export const WORLD_CARDS: {
     tone: "cream",
     span: true,
   },
+
   {
     id: "final",
     emoji: "🎁",
@@ -253,34 +347,41 @@ export const ERAS: {
     emoji: "🎀",
     name: "Cute Somu",
     caption: "Smile and everything melts.",
-    body: "Smile and now you cannot say anything, everything inside of you will melt and you will be doing everything she asks.",
+    body:
+      "Smile and now you cannot say anything, everything inside of you will melt and you will be doing everything she asks.",
     photo: "era-cute",
     theme: "cute",
   },
+
   {
     id: "confident",
     emoji: "👑",
     name: "Confident Somu",
     caption: "Inspiration in action.",
-    body: "Confidence that inspires me so much that it makes me push myself harder.",
+    body:
+      "Confidence that inspires me so much that it makes me push myself harder.",
     photo: "era-confident",
     theme: "bossy",
   },
+
   {
     id: "funky",
     emoji: "✨",
     name: "Funky Somu",
     caption: "Killing the style with the looks.",
-    body: "Always increasing the value of what you wear, always killing the style with the looks.",
+    body:
+      "Always increasing the value of what you wear, always killing the style with the looks.",
     photo: "era-funky",
     theme: "lover",
   },
+
   {
     id: "lively",
     emoji: "🌸",
     name: "Lively Somu",
     caption: "Peaceful and happy vibes.",
-    body: "That chulbuli part of yours that gives peaceful and happy vibes.",
+    body:
+      "That chulbuli part of yours that gives peaceful and happy vibes.",
     photo: "era-lively",
     theme: "artist",
   },
@@ -289,10 +390,25 @@ export const ERAS: {
 /* ── FAKE CELEBRITY PROFILE ─────────────────────────────────── */
 
 export const CELEB_STATS = [
-  { label: "Followers", value: "999M" },
-  { label: "Likes", value: "100B" },
-  { label: "Trending", value: "#1" },
-  { label: "Status", value: "Global Icon" },
+  {
+    label: "Followers",
+    value: "999M",
+  },
+
+  {
+    label: "Likes",
+    value: "100B",
+  },
+
+  {
+    label: "Trending",
+    value: "#1",
+  },
+
+  {
+    label: "Status",
+    value: "Global Icon",
+  },
 ];
 
 export const CELEB_LINES = [
@@ -301,13 +417,39 @@ export const CELEB_LINES = [
   "7 billion people exist. Somehow she still chose to boss me around.",
 ];
 
-export const CELEB_AWARDS: { label: string; pct: number }[] = [
-  { label: "Most Powerful", pct: 100 },
-  { label: "Most Beautiful", pct: 100 },
-  { label: "Most Bossy", pct: 100 },
-  { label: "Most Loved", pct: 100 },
-  { label: "Most Dangerous Smile", pct: 100 },
-  { label: "Most Likely To Be Right", pct: 100 },
+export const CELEB_AWARDS: {
+  label: string;
+  pct: number;
+}[] = [
+  {
+    label: "Most Powerful",
+    pct: 100,
+  },
+
+  {
+    label: "Most Beautiful",
+    pct: 100,
+  },
+
+  {
+    label: "Most Bossy",
+    pct: 100,
+  },
+
+  {
+    label: "Most Loved",
+    pct: 100,
+  },
+
+  {
+    label: "Most Dangerous Smile",
+    pct: 100,
+  },
+
+  {
+    label: "Most Likely To Be Right",
+    pct: 100,
+  },
 ];
 
 /* ── ANALYTICS ──────────────────────────────────────────────── */
@@ -318,13 +460,43 @@ export const ANALYTICS: {
   numeric?: number;
   suffix?: string;
 }[] = [
-  { label: "Cuteness", value: "∞" },
-  { label: "Bossiness", value: "∞" },
-  { label: "Patience", value: "Depends on me" },
-  { label: "Anger Level", value: "CLASSIFIED" },
-  { label: "Smile Power", value: "Dangerous" },
-  { label: "Boyfriend Control", value: "100%", numeric: 100, suffix: "%" },
-  { label: "Times She Was Wrong", value: "0", numeric: 0 },
+  {
+    label: "Cuteness",
+    value: "∞",
+  },
+
+  {
+    label: "Bossiness",
+    value: "∞",
+  },
+
+  {
+    label: "Patience",
+    value: "Depends on me",
+  },
+
+  {
+    label: "Anger Level",
+    value: "CLASSIFIED",
+  },
+
+  {
+    label: "Smile Power",
+    value: "Dangerous",
+  },
+
+  {
+    label: "Boyfriend Control",
+    value: "100%",
+    numeric: 100,
+    suffix: "%",
+  },
+
+  {
+    label: "Times She Was Wrong",
+    value: "0",
+    numeric: 0,
+  },
 ];
 
 /* ── VAULT ──────────────────────────────────────────────────── */
@@ -344,26 +516,33 @@ export const VAULT_QUESTIONS: VaultQuestion[] = [
     hint: "Fearless (Taylor's Version)",
     answers: ["best dress", "bestdress"],
     reward: "💋 100 Virtual & Real Kissies",
-    rewardNote: "Redeemable anytime, anywhere. No expiration date.",
+    rewardNote:
+      "Redeemable anytime, anywhere. No expiration date.",
   },
+
   {
-    prompt: "I like shiny things, but I'd marry you with ______ rings.",
+    prompt:
+      "I like shiny things, but I'd marry you with ______ rings.",
     hint: "Paper Rings (Lover)",
     answers: ["paper"],
     reward: "🤗 The Big Warm Hug",
     rewardNote:
       "The extra-cozy kind where I squeeze tight and don't let go first.",
   },
+
   {
-    prompt: "Can I go where you go? Can we always be this ______?",
+    prompt:
+      "Can I go where you go? Can we always be this ______?",
     hint: "Lover",
     answers: ["close"],
     reward: "👑 Full Princess Treatment Day",
     rewardNote:
       "I handle all your errands, cook your favorite meal, and treat you like royalty.",
   },
+
   {
-    prompt: "You are the best thing that's ever been ______.",
+    prompt:
+      "You are the best thing that's ever been ______.",
     hint: "Mine (Speak Now)",
     answers: ["mine"],
     reward: "💆 Deluxe Shoulder & Head Massage",
@@ -390,6 +569,7 @@ export const KNOW_QUESTIONS: KnowQuestion[] = [
     right: "Correct. This was never a question.",
     wrong: "Wrong answer. She's going to know about this. 😭",
   },
+
   {
     q: "Who is the boss?",
     options: ["Me", "Somu 👑", "The government"],
@@ -397,6 +577,7 @@ export const KNOW_QUESTIONS: KnowQuestion[] = [
     right: "The government wishes.",
     wrong: "Bold of you. Brave, even.",
   },
+
   {
     q: "Which is Somu's favourite chocolate?",
     options: ["KitKat", "Dairy Milk", "Both obviously 👑"],
@@ -404,25 +585,41 @@ export const KNOW_QUESTIONS: KnowQuestion[] = [
     right: "Correct. Why choose when you can have both?",
     wrong: "Wrong. It's obviously both!",
   },
+
   {
     q: "What is her favourite hoodie?",
-    options: ["Her own hoodie", "Any cozy hoodie", "My hoodie obviously 👑"],
+    options: [
+      "Her own hoodie",
+      "Any cozy hoodie",
+      "My hoodie obviously 👑",
+    ],
     correct: 2,
     right: "What's yours is hers.",
     wrong: "Nope, your closet is her closet.",
   },
+
   {
     q: "What is Somu's favourite food?",
-    options: ["Bhindi", "My cooked food", "My cooked bhindi 👑"],
+    options: [
+      "Bhindi",
+      "My cooked food",
+      "My cooked bhindi 👑",
+    ],
     correct: 2,
     right: "Chef status achieved!",
     wrong: "Close, but it has to be cooked by you!",
   },
+
   {
     q: "Is Somu the prettiest?",
-    options: ["Obviously 👑", "100% yes 👑", "All 3 👑"],
+    options: [
+      "Obviously 👑",
+      "100% yes 👑",
+      "All 3 👑",
+    ],
     correct: [0, 1, 2],
-    right: "There are no wrong answers here. She's the prettiest!",
+    right:
+      "There are no wrong answers here. She's the prettiest!",
     wrong: "Impossible to get this wrong!",
   },
 ];
@@ -437,72 +634,92 @@ export const LOVE_LIST: {
   {
     emoji: "💗",
     title: "Your smile",
-    message: "It ends arguments I was winning. Every single time.",
+    message:
+      "It ends arguments I was winning. Every single time.",
   },
+
   {
     emoji: "👑",
     title: "Your confidence",
     message:
       "You walk into rooms like they were reserved for you. Because they were.",
   },
+
   {
     emoji: "😂",
     title: "Your craziness",
-    message: "Nobody else could make chaos feel this comforting.",
+    message:
+      "Nobody else could make chaos feel this comforting.",
   },
+
   {
     emoji: "🎀",
     title: "Your cuteness",
-    message: "Unfair. Weaponised. I've stopped resisting.",
+    message:
+      "Unfair. Weaponised. I've stopped resisting.",
   },
+
   {
     emoji: "🧠",
     title: "Your intelligence",
     message:
       "You explain things twice because I'm slow, and never once make me feel it.",
   },
+
   {
     emoji: "✨",
     title: "Your ambition",
     message:
       "You want a big life, and I have never once doubted you'll get it.",
   },
+
   {
     emoji: "❤️",
     title: "The way you care",
     message:
       "Quietly, constantly, in a hundred tiny ways you think nobody notices. I notice.",
   },
+
   {
     emoji: "🥹",
     title: "The way you make my days better",
-    message: "Even the bad ones. Especially the bad ones.",
+    message:
+      "Even the bad ones. Especially the bad ones.",
   },
+
   {
     emoji: "💞",
     title: "The way I resonate with you",
-    message: "Same wavelength, same jokes, same silence. Rare thing.",
+    message:
+      "Same wavelength, same jokes, same silence. Rare thing.",
   },
+
   {
     emoji: "🤍",
     title: "The way you understand me",
     message:
       "You read me before I finish the sentence. Slightly terrifying. Mostly wonderful.",
   },
+
   {
     emoji: "🌱",
     title: "The way you believe in me",
-    message: "You've backed me on days I couldn't back myself.",
+    message:
+      "You've backed me on days I couldn't back myself.",
   },
+
   {
     emoji: "☀️",
     title: "My mood lifter",
-    message: "One text from you resets the whole day.",
+    message:
+      "One text from you resets the whole day.",
   },
+
   {
     emoji: "❤️",
     title: "My love",
-    message: "[ADD PERSONAL MESSAGE HERE]",
+    message:
+      "[ADD PERSONAL MESSAGE HERE]",
   },
 ];
 
@@ -510,20 +727,44 @@ export const LOVE_LIST: {
 
 export const LETTER = {
   salutation: "Dear Somu,",
+
   paragraphs: [
     "[ADD PERSONAL MESSAGE HERE] — this is where your letter goes. Write it exactly how you'd say it out loud.",
+
     "[ADD MEMORY HERE] — the moment you'd keep if you could only keep one.",
+
     "[ADD PERSONAL MESSAGE HERE] — what you're hoping for, for her, this year.",
   ],
+
   signoff: "Always yours,",
+
   signature: "[ADD YOUR NAME HERE]",
 };
 
 /* ── FINAL SURPRISE ─────────────────────────────────────────── */
 
 export const FINAL_SURPRISE = {
+  /**
+   * Put your final video at:
+   *
+   * public/media/final.mp4
+   *
+   * Then change this to:
+   *
+   * "/media/final.mp4"
+   */
   video: null as string | null,
-  letter: "FINAL_LETTER_PLACEHOLDER — [ADD FINAL MESSAGE HERE]",
+
+  letter:
+    "FINAL_LETTER_PLACEHOLDER — [ADD FINAL MESSAGE HERE]",
+
+  /**
+   * Optional voice note.
+   *
+   * Example:
+   *
+   * "/audio/final-voice.mp3"
+   */
   voice: null as string | null,
 };
 
