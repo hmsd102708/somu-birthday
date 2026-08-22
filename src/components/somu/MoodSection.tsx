@@ -1,12 +1,29 @@
 import { CELEB_LINES, HER, type PhotoId } from "@/content/somu";
-import { Photo, Reveal, SectionShell } from "./primitives";
+import { Photo, PhotoGallery, Reveal, SectionShell } from "./primitives";
 
 export function CuteSomu({ onBack }: { onBack: () => void }) {
   const notes = [
-    { t: "Exhibit A", b: "The face she makes when she wants something. Effective 100% of the time." },
-    { t: "Exhibit B", b: "Falls asleep mid-sentence. Wakes up ready to argue about the same sentence." },
-    { t: "Exhibit C", b: "Claims innocence. Has never been innocent. [ADD MEMORY HERE]" },
+    {
+      t: "Exhibit A",
+      b: "The face she makes when she wants something. Effective 100% of the time.",
+    },
+    {
+      t: "Exhibit B",
+      b: "Falls asleep mid-sentence. Wakes up ready to argue about the same sentence.",
+    },
+    {
+      t: "Exhibit C",
+      b: "Claims innocence. Has never been innocent.",
+    },
   ];
+
+  const photos: PhotoId[] = [
+    "PHOTO_PLACEHOLDER_02",
+    "PHOTO_PLACEHOLDER_10",
+    "PHOTO_PLACEHOLDER_11",
+    "PHOTO_PLACEHOLDER_12",
+  ];
+
   return (
     <SectionShell onBack={onBack} label="Cute Somu" tone="pink">
       <header className="mb-8">
@@ -17,13 +34,11 @@ export function CuteSomu({ onBack }: { onBack: () => void }) {
         </p>
       </header>
 
-      <div className="grid gap-6 sm:grid-cols-3">
-        {(["PHOTO_PLACEHOLDER_02", "PHOTO_PLACEHOLDER_04", "PHOTO_PLACEHOLDER_08"] as PhotoId[]).map((p, i) => (
-          <Reveal key={p} delay={i * 90}>
-            <Photo id={p} shape="polaroid" tilt={i === 1 ? 1.8 : -1.8} caption={notes[i]?.t ?? ""} />
-          </Reveal>
-        ))}
-      </div>
+      <PhotoGallery
+        photos={photos}
+        shape="polaroid"
+        captions={["Exhibit A", "Exhibit B", "Exhibit C", "Just more cuteness"]}
+      />
 
       <div className="mt-10 space-y-4">
         {notes.map((n, i) => (
@@ -44,15 +59,27 @@ export function ArtistSomu({ onBack }: { onBack: () => void }) {
     <SectionShell onBack={onBack} label="Generational Artist" tone="dark">
       <header className="mb-8">
         <p className="overline text-[0.6rem] text-chrome">Cover story</p>
-        <h1 className="editorial mt-3 text-5xl text-cream sm:text-7xl">Generational Artist</h1>
-        <p className="hand mt-2 text-xl text-gold/80">Taylor Swift has competition.</p>
+        <h1 className="editorial mt-3 text-5xl text-cream sm:text-7xl">
+          Generational Artist
+        </h1>
+        <p className="hand mt-2 text-xl text-gold/80">
+          Taylor Swift has competition.
+        </p>
       </header>
 
       <Reveal>
         <div className="relative border border-chrome/20">
-          <Photo id="PHOTO_PLACEHOLDER_06" shape="cover" ratio="3 / 4" caption="Somu · the interview" />
+          <Photo
+            id="PHOTO_PLACEHOLDER_06"
+            shape="cover"
+            ratio="3 / 4"
+            caption="Somu · the interview"
+          />
+
           <div className="pointer-events-none absolute top-4 left-4">
-            <p className="overline text-[0.5rem] text-cream/70">SOMU · MONTHLY</p>
+            <p className="overline text-[0.5rem] text-cream/70">
+              SOMU · MONTHLY
+            </p>
           </div>
         </div>
       </Reveal>
@@ -63,9 +90,12 @@ export function ArtistSomu({ onBack }: { onBack: () => void }) {
             "Generational talent. Extremely underrated."
           </p>
         </Reveal>
+
         <Reveal delay={80}>
           <p className="text-sm leading-relaxed text-cream/70">
-            Sold-out shows in the festivals. Phenomenal performances ever in history. Critics (me) call it "the best voice I've ever been personally serenaded by." {CELEB_LINES[2]}
+            Sold-out shows in the festivals. Phenomenal performances ever in
+            history. Critics (me) call it "the best voice I've ever been
+            personally serenaded by."
           </p>
         </Reveal>
       </div>
